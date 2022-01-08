@@ -1,6 +1,9 @@
 # HandSlidePath
 
->Full text using Google Translate
+[中文版说明](https://github.com/HuRuWo/HandSlidePath/blob/main/README.md)
+
+>Full text using Google Translate 
+
 
 One line of code to obtain the manual sliding trajectory, the trajectory is fidelity.
 The manual recording method simulates sliding recording, and records the time and coordinate correspondence of the three actions of pressing-sliding-lifting together.
