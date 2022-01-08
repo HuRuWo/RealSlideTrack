@@ -8,8 +8,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.GsonUtils;
+import com.luozm.captcha.Captcha;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
 
     private ArrayList<ActionPoint> actionPoints = new ArrayList<>();
-    private float start_x = 0,start_y =0 ;
-    private View line1;
-    private TextView textView;
+    private float start_x = 0,start_y =0,end_x = 0,end_y=0 ;
+    private String path = "{}";
+
+    private Captcha captCha;
 
 
 
@@ -38,9 +41,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.e(TAG,dip2px(getApplicationContext(),200)+"");
-        line1 = (View) findViewById(R.id.line1);
-        textView = (TextView) findViewById(R.id.textView);
-        textView.setText("本屏幕 200dp = "+dip2px(getApplicationContext(),200)+"px");
+        captCha = (Captcha) findViewById(R.id.captCha);
+        captCha.setCaptchaListener(new Captcha.CaptchaListener() {
+            @Override
+            public String onAccess(long time) {
+                Toast.makeText(MainActivity.this,"验证成功,上传path",Toast.LENGTH_SHORT).show();
+                captCha.reset(true);
+
+                uploadPath(end_x,end_y,path);
+
+
+                return "验证通过,耗时"+time+"毫秒";
+            }
+
+            @Override
+            public String onFailed(int failedCount) {
+                Toast.makeText(MainActivity.this,"验证失败",Toast.LENGTH_SHORT).show();
+                captCha.reset(true);
+                return "验证失败,已失败"+failedCount+"次";
+            }
+
+            @Override
+            public String onMaxFailed() {
+                Toast.makeText(MainActivity.this,"验证超过次数，你的帐号被封锁",Toast.LENGTH_SHORT).show();
+                return "验证失败,帐号已封锁";
+            }
+        });
     }
 
     @Override
@@ -57,12 +83,11 @@ public class MainActivity extends AppCompatActivity {
                 actionPoints.add(new ActionPoint(time,event.getX()-start_x,event.getY()-start_y,event.getAction()));
                 break;
             case MotionEvent.ACTION_UP:
-                float end_x = event.getX()-start_x;
-                float end_y = event.getY()-start_y;
-                actionPoints.add(new ActionPoint(time,end_x,end_y,event.getAction()));
-                String path = GsonUtils.toJson(actionPoints);
+                 end_x = event.getX()-start_x;
+                 end_y = event.getY()-start_y;
+                 actionPoints.add(new ActionPoint(time,end_x,end_y,event.getAction()));
+                 path = GsonUtils.toJson(actionPoints);
                 Log.e(TAG, path);
-                uploadPath(end_x,end_y,path);
                 break;
             default:
                 break;

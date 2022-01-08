@@ -28,4 +28,4 @@ async def add_slide(end_x, end_y, path_json, db: Session = Depends(get_session))
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8001,debug=False)

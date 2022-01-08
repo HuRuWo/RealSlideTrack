@@ -1,6 +1,6 @@
 # HandSlidePath
 
-[中文版说明](https://github.com/HuRuWo/HandSlidePath/blob/main/README.md)
+[中文版说明](https://github.com/HuRuWo/HandSlidePath/blob/main/README_zh.md)
 
 >Full text using Google Translate 
 
