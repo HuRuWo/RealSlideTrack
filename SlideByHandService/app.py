@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
 
-from db import get_session, SlidePath
+from hand_slide_path.db import get_session, SlidePath
 
 app = FastAPI()
 
@@ -13,8 +13,8 @@ async def root():
     return {"message": "hello world"}
 
 
-@app.post("/slide_path")
-async def root(end_x, end_y, path_json, db: Session = Depends(get_session)):
+@app.get("/slide_path")
+async def add_slide(end_x, end_y, path_json, db: Session = Depends(get_session)):
     slide_path = SlidePath(end_x=end_x, end_y=end_y, path_json=path_json)
     try:
         db.add(slide_path)

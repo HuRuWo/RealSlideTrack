@@ -1,0 +1,9 @@
+setup.py
+hand_slide_path/__init__.py
+hand_slide_path/db.py
+hand_slide_path/main.py
+hand_slide_path.egg-info/PKG-INFO
+hand_slide_path.egg-info/SOURCES.txt
+hand_slide_path.egg-info/dependency_links.txt
+hand_slide_path.egg-info/entry_points.txt
+hand_slide_path.egg-info/top_level.txt
