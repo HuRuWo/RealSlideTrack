@@ -35,3 +35,7 @@ get_slide_path(end_x = 300.0, scope = 100, one=False)
 ```
 
 ok Pleasant to use
+
+## Data update instructions
+
+2021-01-08   data count =  1000

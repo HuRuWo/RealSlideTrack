@@ -19,9 +19,8 @@ async def add_slide(end_x, end_y, path_json, db: Session = Depends(get_session))
     try:
         db.add(slide_path)
         db.commit()
-        li = db.query(SlidePath).all()
-        for l in li:
-            print(l.to_dict())
+        count = db.query(SlidePath).count()
+        print(str(count))
         return {"message": "写入成功"}
     except Exception as e:
         return {"message": "" + str(e) + ""}
