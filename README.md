@@ -36,6 +36,16 @@ get_slide_path(end_x = 300.0, scope = 100, one=False)
 
 ok Pleasant to use
 
+## Record your own slide path library
+
+This repository provides a path scheme for recording and uploading yourself
+
+python app.py starts fastapi service
+
+Compile and run the AS project to install the apk file on the phone
+
+Remember to modify the upload path to the server path.
+
 ## Data update instructions
 
 2021-01-08   data count =  1000
