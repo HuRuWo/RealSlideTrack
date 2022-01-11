@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ActionPoint> actionPoints = new ArrayList<>();
     private float start_x = 0,start_y =0,end_x = 0,end_y=0 ;
     private String path = "{}";
-
     private Captcha captCha;
-
+    private EditText edit0;
 
 
 
@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.e(TAG,dip2px(getApplicationContext(),200)+"");
         captCha = (Captcha) findViewById(R.id.captCha);
+        edit0 = (EditText) findViewById(R.id.edit_0);
+
+
+
         captCha.setCaptchaListener(new Captcha.CaptchaListener() {
             @Override
             public String onAccess(long time) {
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
                 uploadPath(end_x,end_y,path);
 
+                edit0.setText(path);
 
                 return "验证通过,耗时"+time+"毫秒";
             }

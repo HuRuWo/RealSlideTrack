@@ -8,6 +8,8 @@
 One line of code to obtain the manual sliding trajectory, the trajectory is fidelity.
 The manual recording method simulates sliding recording, and records the time and coordinate correspondence of the three actions of pressing-sliding-lifting together.
 
+![](device-2022-01-11-104635.gif)
+
 ## how to use
 
 

@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/huruwo/Desktop/HandSlidePath/SlideByHand/app/src/main/res/layout/activity_main.xml" value="0.35778985507246375" />
+        <entry key="..\:/Users/huruwo/Desktop/HandSlidePath/SlideByHand/app/src/main/res/layout/activity_main.xml" value="0.2734375" />
         <entry key="..\:/github_my_open/SlideByHand/app/src/main/res/layout/activity_main.xml" value="0.22780797101449277" />
       </map>
     </option>
@@ -13,5 +13,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.35778985507246375" />
+      </ProjectState>
+    </option>
   </component>
 </project>
