@@ -1,4 +1,4 @@
-# HandSlidePath
+# SimulateSlidingTrack
 
 [中文版说明](https://github.com/HuRuWo/HandSlidePath/blob/main/README_zh.md)
 
