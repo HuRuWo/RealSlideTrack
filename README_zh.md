@@ -31,6 +31,16 @@ get_slide_path(end_x = 300.0, scope = 100, one=False)
 
 ok 使用愉快
 
+## 录制自己的slide path库
+
+本仓库提供了录制上传自己的path方案
+
+python app.py  启动fastapi服务
+
+编译运行 AS 工程安装apk文件到手机上面
+
+记得修改上传的路径为服务器路径即可
+
 ## 数据更新说明
 
 
