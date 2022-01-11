@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void uploadPath(float end_x,float end_y,String path_json){
-        String url = "http://192.168.1.126:8001/slide_path?end_x="+end_x+"&end_y="+end_y+"&path_json="+path_json;
+        String url = "http://192.168.100.10:8001/slide_path?end_x="+end_x+"&end_y="+end_y+"&path_json="+path_json;
         OkHttpClient okHttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
                 .url(url)
