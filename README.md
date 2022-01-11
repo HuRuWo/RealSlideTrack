@@ -11,6 +11,7 @@ The manual recording method simulates sliding recording, and records the time an
 
 ![](device-2022-01-11-104635.gif)
 
+
 ## how to use
 
 
@@ -50,5 +51,8 @@ Compile and run the AS project to install the apk file on the phone
 Remember to modify the upload path to the server path.
 
 ## Data update instructions
+
+
+![](20220111155238.png)
 
 2021-01-08   data count =  1000
