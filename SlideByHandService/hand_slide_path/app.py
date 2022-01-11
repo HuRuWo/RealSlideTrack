@@ -1,7 +1,11 @@
+import os
+
 import uvicorn as uvicorn
 from fastapi import FastAPI
+from fastapi.logger import logger
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
+from uvicorn.config import LOGGING_CONFIG
 
 from hand_slide_path.db import get_session, SlidePath
 
@@ -28,4 +32,5 @@ async def add_slide(end_x, end_y, path_json, db: Session = Depends(get_session))
 
 
 if __name__ == "__main__":
+    LOGGING_CONFIG["formatters"]["default"]["fmt"] = "%(asctime)s [%(name)s] %(levelprefix)s %(message)s"
     uvicorn.run(app, host="0.0.0.0", port=8001,debug=False)
